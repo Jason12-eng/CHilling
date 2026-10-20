@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aim Trainer</title>
+  <style>
+    body {
+      margin: 0;
+      background: #151515;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #arena {
+      position: relative;
+      width: 800px;
+      height: 500px;
+      margin: 20px auto;
+      background: #242424;
+      border: 2px solid #555;
+      overflow: hidden;
+    }
+
+    #target {
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: #ff4545;
+      cursor: crosshair;
+    }
+  </style>
+</head>
+<body>
+  <h2>Aim Trainer</h2>
+  <p>Score: <span id="score">0</span></p>
+
+  <div id="arena">
+    <div id="target"></div>
+  </div>
+
+  <script>
+    const arena = document.getElementById('arena');
+    const target = document.getElementById('target');
+    const scoreDisplay = document.getElementById('score');
+
+    let score = 0;
+
+    function moveTarget() {
+      const maxX = arena.clientWidth - target.offsetWidth;
+      const maxY = arena.clientHeight - target.offsetHeight;
+
+      target.style.left = Math.random() * maxX + 'px';
+      target.style.top = Math.random() * maxY + 'px';
+    }
+
+    target.addEventListener('click', () => {
+      score++;
+      scoreDisplay.textContent = score;
+      moveTarget();
+    });
+
+    moveTarget();
+  </script>
+</body>
+</html>

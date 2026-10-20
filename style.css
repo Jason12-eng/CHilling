@@ -1,0 +1,868 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   MAIN BACKGROUND
+========================= */
+
+.main {
+    min-height: 100vh;
+
+    position: relative;
+
+    background: linear-gradient(rgba(8, 8, 18, 0.50), rgba(8, 8, 18, 0.50));
+
+    overflow: hidden;
+}
+
+
+.video-bg {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    filter: brightness(0.75) contrast(1.2);
+}
+
+
+.header,
+.home,
+.quiz-section,
+.popup-overlay,
+.popping-info {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 20px 10%;
+
+    background-color: transparent;
+    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+}
+
+
+.header__logo {
+    font-size: 32px;
+    font-weight: bold;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+
+.navbar a {
+    margin-left: 35px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.navbar a:hover,
+.navbar a.active {
+    color: #ffcc00;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+.home-content {
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.home-content h1 {
+    font-size: 78px;
+
+    font-weight: 700;
+
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.home-content p {
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================
+   START BUTTON
+========================= */
+
+.home-content .btn {
+    display: inline-block;
+
+    padding: 12px 30px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: white;
+
+    background-color: #ffcc00;
+
+    border: none;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.home-content .btn:hover {
+    background-color: #e6b800;
+
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   POPUP OVERLAY
+===================================================== */
+
+.popup-overlay {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    /* Background blur */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 200;
+}
+
+
+/* Overlay appears */
+
+.popup-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =====================================================
+   POPUP
+===================================================== */
+
+.popping-info {
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    width: 625px;
+
+    padding: 28px 32px 22px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.8);
+
+    background-color: transparent;
+
+    color: #222;
+
+    border-radius: 8px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 201;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Popup appears */
+
+.popping-info.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+
+/* =========================
+   POPUP TITLE
+========================= */
+
+.popping-info h2 {
+
+    margin-bottom: 22px;
+
+    font-size: 50px;
+
+    font-weight: 700;
+
+    color: #ffcc00;
+
+    text-shadow:
+        0 2px 2px rgba(243, 240, 240, 0.15);
+}
+
+
+/* =========================
+   GUIDE LIST
+========================= */
+
+.info-list {
+    color: white;
+
+    margin: 0;
+
+    padding-left: 28px;
+
+    font-size: 20px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================
+   LINE
+========================= */
+
+.popping-info hr {
+
+    margin: 12px 0 18px;
+
+    border: none;
+
+    border-top: 1px solid #aaa;
+}
+
+
+/* =========================
+   POPUP BUTTON GROUP
+========================= */
+
+.btn-gp {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+/* =========================
+   POPUP BUTTON
+========================= */
+
+.info-btn {
+
+    height: 56px;
+
+    min-width: 164px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 0 25px;
+
+    border-radius: 7px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+/* =========================
+   EXIT
+========================= */
+
+.info-btn.exit {
+
+    background: white;
+
+    border: 2px solid #ffcc00;
+
+    color: #ffcc00;
+}
+
+
+.info-btn.exit:hover {
+
+    background: #ffcc00;
+
+    color: #1a1a1a;
+}
+
+
+/* =========================
+   CONTINUE
+========================= */
+
+.info-btn.continue {
+
+    background: #ffcc00;
+
+    border: 2px solid #ffcc00;
+
+    color: white;
+}
+
+
+.info-btn.continue:hover {
+
+    background: #e6b800;
+
+    border-color: #e6b800;
+}
+
+
+/* =====================================================
+   QUIZ SECTION
+===================================================== */
+
+.quiz-section {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    background: transparent;
+
+    z-index: 150;
+}
+
+
+/* When quiz starts */
+
+.quiz-section.active {
+
+    display: flex;
+}
+
+
+/* =====================================================
+   QUIZ CONTAINER
+===================================================== */
+
+.quiz-container {
+
+    background-color: rgba(12, 8, 40, 0.95);
+
+    width: 560px;
+
+    min-height: 560px;
+
+    padding: 25px 30px 30px;
+
+    border-radius: 18px;
+
+    border: 4px solid #ffcc00;
+
+    box-shadow:
+        0 0 10px rgba(0, 0, 0, 0.3);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#quiz-content {
+    width: 100%;
+}
+
+
+/* Quiz title */
+
+.quiz-container h1 {
+
+    font-size: 24px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Question */
+
+.quiz-container h2 {
+
+    font-size: 18px;
+
+    margin: 20px 0;
+}
+
+
+/* Line */
+
+.quiz-container hr {
+
+    border: none;
+
+    border-top: 1px solid #aaa;
+}
+
+
+/* =====================================================
+   ANSWER BUTTONS
+===================================================== */
+
+.answer {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 10px 0;
+
+    text-align: left;
+
+    background-color: white;
+
+    color: black;
+
+    border: 2px solid #aaa;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+
+/* Hover */
+
+.answer:hover {
+
+    background-color: black;
+
+    color: white;
+
+    border-color: black;
+}
+
+
+/* Correct */
+
+.answer.correct {
+
+    background-color: #8ee5b0;
+
+    border-color: #55c77d;
+
+    color: black;
+}
+
+
+/* Wrong */
+
+.answer.wrong {
+
+    background-color: #f28b8b;
+
+    border-color: #e45c5c;
+
+    color: black;
+}
+
+
+/* Disabled buttons */
+
+.answer:disabled {
+
+    cursor: default;
+}
+
+
+/* Prevent hover changing correct/wrong */
+
+.answer.correct:hover {
+
+    background-color: #8ee5b0;
+
+    color: black;
+
+    border-color: #55c77d;
+}
+
+
+.answer.wrong:hover {
+
+    background-color: #f28b8b;
+
+    color: black;
+
+    border-color: #e45c5c;
+}
+
+
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+#next-btn {
+
+    display: block;
+
+    width: 125px;
+
+    margin: 25px auto 0;
+
+    padding: 10px;
+
+    background-color: #06275c;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+#next-btn:hover {
+
+    background-color: #0b3d8f;
+}
+
+
+/* =====================================================
+   RESULT BOX
+===================================================== */
+
+.result-box {
+    display: none;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+
+.result-box.active {
+    display: block;
+}
+
+
+.result-box h1 {
+    font-size: clamp(42px, 4vw, 72px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+
+.score-ring {
+    --result-angle: 0%;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background: conic-gradient(#ffcc00 0 var(--result-angle), rgba(255, 255, 255, 0.18) var(--result-angle) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.08);
+}
+
+
+.score-ring::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border-radius: 50%;
+    background: rgba(11, 15, 42, 0.96);
+    border: 3px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.score-ring-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+}
+
+
+#result-percent {
+    font-size: clamp(42px, 4vw, 64px);
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.result-score {
+    font-size: clamp(26px, 2.3vw, 36px);
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.result-btn {
+    min-width: 180px;
+    min-height: 58px;
+    padding: 0 28px;
+    border-radius: 12px;
+    border: 2px solid #ffcc00;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+.result-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+.result-btn.retry {
+    background: #ffcc00;
+    border-color: #ffcc00;
+}
+
+
+.result-btn.retry:hover {
+    background: #e6b800;
+    border-color: #e6b800;
+}
+
+
+.result-btn.home {
+    background: transparent;
+    color: #fff;
+}
+
+
+.result-btn.home:hover {
+    background: rgba(255, 204, 0, 0.12);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .header {
+
+        padding: 20px 5%;
+    }
+
+
+    .navbar a {
+
+        margin-left: 10px;
+
+        font-size: 14px;
+    }
+
+
+    .home-content {
+
+        padding: 20px;
+    }
+
+
+    .home-content h1 {
+
+        font-size: 50px;
+    }
+
+
+    .home-content p {
+
+        font-size: 16px;
+    }
+
+
+    .popping-info {
+
+        width: 90%;
+
+        padding: 25px;
+    }
+
+
+    .popping-info h2 {
+
+        font-size: 38px;
+    }
+
+
+    .info-list {
+
+        font-size: 16px;
+    }
+
+
+    .quiz-container {
+
+        width: 90%;
+        min-height: 500px;
+        padding: 22px 18px 24px;
+    }
+
+
+    .score-ring {
+        width: 210px;
+        height: 210px;
+    }
+
+
+    .result-score {
+        font-size: 24px;
+    }
+
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+
+    .result-btn {
+        width: 100%;
+    }
+}

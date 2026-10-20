@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Website</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="main">
+
+        <video class="video-bg" autoplay muted loop playsinline>
+            <source src="./image/videoplayback.webm" type="video/webm">
+        </video>
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <a href="#" class="header__logo">Quiz</a>
+
+            <nav class="navbar">
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Service</a>
+            </nav>
+
+        </header>
+
+
+        <!-- ================= HOME ================= -->
+
+        <section class="home">
+
+            <div class="home-content">
+
+                <h1>Quiz Website</h1>
+
+                <p>
+                    Welcome to our quiz website! Test your knowledge
+                    and challenge yourself with a variety of quizzes
+                    on different topics. Whether you're a trivia
+                    enthusiast or just looking for some fun, our
+                    quizzes are designed to entertain and educate.
+                    Start exploring now and see how much you know!
+                </p>
+
+                <button class="btn" id="start-btn">
+                    Start Quiz
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= POPUP OVERLAY ================= -->
+
+        <div class="popup-overlay" id="popup-overlay"></div>
+
+
+        <!-- ================= QUIZ GUIDE POPUP ================= -->
+
+        <div class="popping-info" id="popping-info">
+
+            <h2>Quiz Guide</h2>
+
+            <ol class="info-list">
+
+                <li>
+                    Read each question carefully before selecting an answer.
+                </li>
+
+                <li>
+                    Each question has only one correct answer.
+                </li>
+
+                <li>
+                    You can navigate between questions and review your answers.
+                </li>
+
+                <li>
+                    Good luck!
+                </li>
+
+                <li>
+                    Take your time and think carefully.
+                </li>
+
+            </ol>
+
+            <hr>
+
+            <div class="btn-gp">
+
+                <button class="info-btn exit" id="exit-btn">
+                    Exit Quiz
+                </button>
+
+                <button class="info-btn continue" id="continue-btn">
+                    Continue
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= QUIZ ================= -->
+
+        <section class="quiz-section" id="quiz-section">
+
+            <div class="quiz-container">
+
+                <div id="quiz-content">
+
+                    <h1>Simple Quiz</h1>
+
+                    <hr>
+
+                    <h2 id="question">
+                        Question goes here
+                    </h2>
+
+                    <div id="answers">
+                        <!-- JavaScript creates answers here -->
+                    </div>
+
+                    <button id="next-btn">
+                        Next
+                    </button>
+
+                </div>
+
+                <div class="result-box" id="result-box" aria-live="polite">
+
+                    <h1>Quiz Result!</h1>
+
+                    <div class="score-ring" id="score-ring">
+                        <div class="score-ring-inner">
+                            <span id="result-percent">0%</span>
+                        </div>
+                    </div>
+
+                    <p class="result-score" id="result-score">
+                        Your Score 0 out of 0
+                    </p>
+
+                    <div class="result-actions">
+                        <button class="result-btn retry" id="retry-btn">
+                            Try Again
+                        </button>
+
+                        <button class="result-btn home" id="home-btn">
+                            Go To Home
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

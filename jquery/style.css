@@ -1,0 +1,449 @@
+```css
+:root {
+    --navy: #1b3050;
+    --green: #4caf50;
+    --red: #d9534f;
+
+    --bg: #f0f2f7;
+    --head: #dcdcdc;
+    --line: #d5d5d5;
+}
+
+
+/* =========================
+   Global Styles
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 16px;
+
+    background: var(--bg);
+
+    font-family: Inter, Arial, sans-serif;
+    color: var(--navy);
+}
+
+
+/* =========================
+   Main Card
+   ========================= */
+
+.card {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 620px;
+
+    margin: 0 auto;
+    padding: 34px 44px;
+
+    background: #ffffff;
+    border-radius: 6px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   Heading
+   ========================= */
+
+h1 {
+    margin: 0 0 22px;
+
+    text-align: center;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   Toolbar
+   ========================= */
+
+.toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 12px;
+    margin-bottom: 16px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   Base Button
+   ========================= */
+
+.btn {
+    height: 30px;
+
+    padding: 0 14px 0 0;
+
+    border: none;
+    border-radius: 4px;
+
+    color: #ffffff;
+
+    font: 500 13px Inter, sans-serif;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    overflow: hidden;
+
+    transition: opacity 0.2s ease;
+}
+
+
+/* Button Icon */
+
+.btn i {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    font-style: normal;
+    font-size: 17px;
+}
+
+
+/* =========================
+   ADD BUTTON
+   ========================= */
+
+.btn.add {
+    background-color: navy;
+  
+}
+
+.btn.add:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   EDIT BUTTON
+   ========================= */
+
+.btn.edit {
+     background-color: green;
+}
+
+.btn.edit:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   REMOVE BUTTON
+   ========================= */
+
+.btn.remove {
+    background-color: red;
+}
+
+.btn.remove:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   Disabled Button
+   ========================= */
+
+.btn:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   Keyboard Focus
+   ========================= */
+
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #4a90e2;
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   Table
+   ========================= */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 720px;
+
+    border-collapse: collapse;
+
+    font-size: 13px;
+}
+
+
+/* Table Header */
+
+th {
+    padding: 10px 8px;
+
+    background: var(--head);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* Table Cells */
+
+td {
+    padding: 14px 8px;
+
+    text-align: center;
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+/* Last Row */
+
+tbody tr:last-child td {
+    border-bottom: 1px solid #888;
+}
+
+
+/* Selected Row */
+
+tbody tr.selected {
+    background: #eef3fb;
+}
+
+
+/* Full Name Column */
+
+th:nth-child(3),
+td:nth-child(3) {
+    text-align: left;
+}
+
+
+/* Checkbox */
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+
+    cursor: pointer;
+}
+
+
+/* Empty Table */
+
+.empty {
+    padding: 40px;
+
+    color: #777;
+
+    text-align: center;
+}
+
+
+/* =========================
+   Modal Overlay
+   ========================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 10;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px;
+
+    background: rgba(15, 25, 45, 0.5);
+}
+
+
+/* Open Modal */
+
+.overlay.open {
+    display: flex;
+}
+
+
+/* =========================
+   Modal
+   ========================= */
+
+.modal {
+    width: 100%;
+    max-width: 440px;
+    max-height: 100%;
+
+    padding: 26px;
+
+    background: #ffffff;
+
+    border-radius: 6px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    overflow: auto;
+}
+
+
+/* Modal Heading */
+
+.modal h2 {
+    margin: 0 0 16px;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   Form Labels
+   ========================= */
+
+label {
+    display: block;
+
+    margin: 12px 0 4px;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* =========================
+   Form Inputs
+   ========================= */
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%;
+    height: 36px;
+
+    padding: 0 10px;
+
+    border: 1px solid #bbb;
+    border-radius: 4px;
+
+    color: var(--navy);
+
+    font: 14px Inter, sans-serif;
+}
+
+
+/* =========================
+   Error Message
+   ========================= */
+
+.err {
+    min-height: 14px;
+
+    margin-top: 4px;
+
+    color: #c62828;
+    font-weight: 600;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   Duplicate Alert
+   ========================= */
+
+.alert {
+    display: none;
+
+    margin-top: 14px;
+    padding: 8px 10px;
+
+    background: #fdecea;
+    color: #a12622;
+
+    border-left: 4px solid var(--red);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   Modal Actions
+   ========================= */
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+/* Modal Buttons */
+
+.actions .btn {
+    padding: 0 18px;
+}
+
+
+/* =========================
+   CANCEL BUTTON
+   ========================= */
+
+.cancel {
+    background: #8a94a6;
+}
+
+.cancel:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   SAVE BUTTON
+   ========================= */
+
+.save {
+     background-color:green;
+}
+
+.save:hover {
+    opacity: 0.9;
+}
